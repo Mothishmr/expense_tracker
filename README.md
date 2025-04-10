@@ -1,7 +1,7 @@
 🚀 How to Run the App:
 ----------------------
 1. Clone this repository
-$ git clone https://github.com/Mothishmr/expense-tracker.git
+$ git clone https://github.com/Mothishmr/expense_tracker.git
 $ cd expense-tracker
 
 2. (Optional) Create a virtual environment
@@ -9,10 +9,11 @@ $ python -m venv venv
 $ source venv/bin/activate        # For Linux/macOS
 $ venv\\Scripts\\activate         # For Windows
 
-3. Run the application
-
-1. Install dependencies:
+3. Install dependencies:
    pip install tk
+
+4. Run the application
+
 $ python app.py
 
 Once the GUI opens:
