@@ -1,7 +1,7 @@
 🚀 How to Run the App:
 ----------------------
 1. Clone this repository
-$ git clone https://github.com/yourusername/expense-tracker.git
+$ git clone https://github.com/Mothishmr/expense-tracker.git
 $ cd expense-tracker
 
 2. (Optional) Create a virtual environment
