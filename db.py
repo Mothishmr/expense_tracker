@@ -10,7 +10,6 @@
 #     - get total spent for a month
 #     - get category-wise budget vs spending report
 
-
 import sqlite3
 from datetime import datetime
 
@@ -40,37 +39,11 @@ def init_db():
     conn.close()
 
 def add_expense(amount, category, date):
-    month = date[:7]  # Extract YYYY-MM
     conn = sqlite3.connect("expenses.db")
     c = conn.cursor()
-
-    # Get current spent for category and month
-    c.execute('''
-        SELECT IFNULL(SUM(amount), 0)
-        FROM expenses
-        WHERE category = ? AND strftime('%Y-%m', date) = ?
-    ''', (category, month))
-    current_spent = c.fetchone()[0]
-
-    # Get budget for category and month
-    c.execute('''
-        SELECT budget
-        FROM budgets
-        WHERE category = ? AND month = ?
-    ''', (category, month))
-    row = c.fetchone()
-
-    if row:
-        budget = row[0]
-        if current_spent + amount > budget:
-            conn.close()
-            return False  # Do not add expense
-
-    # Add the expense
     c.execute("INSERT INTO expenses (amount, category, date) VALUES (?, ?, ?)", (amount, category, date))
     conn.commit()
     conn.close()
-    return True
 
 def set_budget(category, month, budget):
     conn = sqlite3.connect("expenses.db")

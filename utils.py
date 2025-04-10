@@ -4,7 +4,6 @@
 # - Provides function to:
 #     - check if any category has exceeded its monthly budget
 #     - show alert messages using tkinter messagebox if exceeded
-
 from tkinter import messagebox
 from db import get_budget_report
 

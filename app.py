@@ -8,8 +8,6 @@
 #     - Shows alerts when spending exceeds budget
 # - Internally connects to db.py for all data operations
 # - Uses utils.py to check and alert if budget exceeded
-
-
 import tkinter as tk
 from tkinter import ttk, messagebox
 from db import init_db, add_expense, set_budget, get_total_spent, get_budget_report
